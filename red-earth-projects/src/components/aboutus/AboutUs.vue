@@ -1,7 +1,7 @@
 <template>
     <div class="about-us">
         <b-row>
-            <b-col xs="12" sm="12" md="6" lg="6" xl="6">
+            <b-col xs="12" sm="12" md="6" lg="6" xl="6" class="img-align">
                 <img src="../../assets/people-table.png" alt="People at the table"
                 class="image-fit"/>
             </b-col>
