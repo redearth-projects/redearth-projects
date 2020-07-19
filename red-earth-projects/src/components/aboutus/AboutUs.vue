@@ -94,8 +94,8 @@
                             </p>
                             <p>
                                 Mr faraz is one of the founding pillars of red earth team.
-                                He as persuade b.arch from vtu in karntaka.worked as a senior
-                                architect at doha in qatar where he worked on major projects
+                                He as persuade b.arch from vtu in Karnataka.worked as an
+                                architect at Doha in Qatar where he worked on major projects
                                 such as Hilton pearl. He opened his firm in Bangalore one of
                                 its own silicon valley of India. Red earth team has achieved years
                                 of success due to his hardwork and passion

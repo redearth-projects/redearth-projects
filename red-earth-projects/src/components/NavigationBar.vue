@@ -110,6 +110,6 @@ li {
   padding-right: 15px;
 }
 .logo-visibility {
-  display: none;
+  visibility: hidden;
 }
 </style>

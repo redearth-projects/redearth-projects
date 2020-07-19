@@ -33,6 +33,6 @@ export default {
     background-image: url('../../assets/services-bg.png');
     background-size: cover;
     background-repeat: no-repeat;
-    margin-top: -10px;
+    // margin-top: -10px;
 }
 </style>

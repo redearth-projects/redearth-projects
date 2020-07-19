@@ -98,14 +98,14 @@
                 <div class="contactus-info-bottom" style="display:inline;">
                   #99, First floor, 10th cross road,
                 </div>
-                <div style="margin-left:33px;">Yelachenahalli, Bangalore 560078</div>
+                <div style="margin-left:31px;">Yelachenahalli, Bangalore 560078</div>
               </div>
               <div class="location">
                 <img src="../assets/contactus/pin.png" alt="location"/>
                 <div class="contactus-info-bottom" style="display:inline;">
                   Legacy Complex,
                 </div>
-                <div style="margin-left:33px;">Kankanadi, Mangaluru</div>
+                <div style="margin-left:31px;">Kankanadi, Mangaluru</div>
               </div>
             </div>
           </b-modal>
