@@ -2,13 +2,13 @@
     <div class="achievements font-size">
         <b-row class="centre-row">
             <b-col class="padding">
-              <ProjectStatus :counter=0 :maxValue=25 projectMsg="Completed Projects" />
+              <ProjectStatus :counter=0 :maxValue=13 projectMsg="Completed Projects" />
             </b-col>
             <b-col class="padding">
-              <ProjectStatus :counter=0 :maxValue=32 projectMsg="Active Projects" />
+              <ProjectStatus :counter=0 :maxValue=10 projectMsg="Active Projects" />
             </b-col>
             <b-col class="padding">
-              <ProjectStatus :counter=0 :maxValue=28 projectMsg="Satisfied Clients" />
+              <ProjectStatus :counter=0 :maxValue=11 projectMsg="Satisfied Clients" />
             </b-col>
         </b-row>
     </div>
@@ -27,6 +27,7 @@ export default {
 .achievements {
   font-family: montserrat;
   display: inline-block;
+  margin-top: 10px;
 }
 .font-size {
   font-size: 12px;

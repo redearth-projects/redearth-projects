@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div id="app" class="re-container">
+    <div id="app">
       <RedEarthBase />
     </div>
     <SocialMedia />

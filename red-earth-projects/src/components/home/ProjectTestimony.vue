@@ -1,6 +1,7 @@
 <template>
     <carousel :per-page="1" :mouse-drag="false" :autoplay="true"
-        :autoplay-timeout="5000" :loop="true" :pagination-position="paginationAlign">
+        :autoplay-timeout="5000" :loop="true" :pagination-position="paginationAlign"
+        :paginationSize="paginationSize" :paginationPadding="paginationPadding">
         <slide>
             <b-row>
                 <b-col xs="12" sm="12" md="4" lg="4" xl="4">
@@ -20,7 +21,31 @@
                         relects in our growth.
                     </p>
                     <span class="explore-projects">Explore Projects</span>
-                    <img src="../../assets/arrow.png" alt="Explore Projects" />
+                    <img style="cursor:pointer;" src="../../assets/arrow.png"
+                    alt="Explore Projects" @click="explore()" />
+                </b-col>
+            </b-row>
+        </slide>
+        <slide>
+            <b-row>
+                <b-col xs="12" sm="12" md="4" lg="4" xl="4">
+                    <p class="tm-slide-2 tm-font">
+                        "Red Earth Projects is one of the best passionate team I
+                        have worked with, The best thing about them is they had
+                        followed my every direction without complicating it. The team
+                        not only helped me in developing my project but also helped
+                        me in incorporating the case factor of my concept in a
+                        professional manner. I would recommed this team if anyone is interested
+                        in achieving their dream project."
+                    </p>
+                    <img src="../../assets/2.png" class="avatar" alt="Dr. Devaraja Reddy NJ" />
+                    <div class="username tm-font">Dr. Devaraja Reddy NJ</div>
+                    <div style="display:flex;">
+                        <img src="../../assets/award.png" class="avatar" alt="Award" />
+                        <div style="font-size:12px;">
+                            National award winner in<br/> water conservation.
+                        </div>
+                    </div>
                 </b-col>
             </b-row>
         </slide>
@@ -36,9 +61,9 @@
                         the estimated cost without compromising quality. Thank you
                         red earth team"
                     </p>
-                    <img src="../../assets/jayaprakash.jpg" class="avatar" alt="Jayaprakash Erod" />
-                    <div class="username tm-font">Jayaprakash Erod</div>
-                    <div class="location tm-font">Tamil Nadu</div>
+                    <img src="../../assets/1.png" class="avatar" alt="Jayaprakash Erod" />
+                    <div class="username tm-font">Jayaprakash</div>
+                    <div class="location tm-font">Erode, Tamil Nadu</div>
                 </b-col>
             </b-row>
         </slide>
@@ -51,7 +76,7 @@
                         control and planning. Best part is on time execution. Weather its
                         architecture or interior I would suggest red earth projects"
                     </p>
-                    <img src="../../assets/nowaiser.jpg" class="avatar" alt="Mr. Nowaiser" />
+                    <img src="../../assets/3.png" class="avatar" alt="Mr. Nowaiser" />
                     <div class="username tm-font">Mr. Nowaiser</div>
                     <div class="location tm-font">Mangalore</div>
                 </b-col>
@@ -68,7 +93,7 @@
                         Which helped us to generate more profit
                         from our commercial properties. Thank you team REP"
                     </p>
-                    <img src="../../assets/anas.jpg" class="avatar" alt="Mr. Anas" />
+                    <img src="../../assets/6.png" class="avatar" alt="Mr. Anas" />
                     <div class="username tm-font">Mr. Anas</div>
                     <div class="location tm-font">Mangalore</div>
                 </b-col>
@@ -85,7 +110,7 @@
                         to the environment.  They were available to us whenever required.
                         We would work again."
                     </p>
-                    <img src="../../assets/manjunath.jpg" class="avatar" alt="Mr. Manjunath" />
+                    <img src="../../assets/4.png" class="avatar" alt="Mr. Manjunath" />
                     <div class="username tm-font">Mr. Manunath</div>
                     <div class="location tm-font">Bengaluru</div>
                 </b-col>
@@ -104,7 +129,7 @@
                         They were reliable, professional and creative. Red earth projects is
                         everything you look for in your building."
                     </p>
-                    <img src="../../assets/nayana.jpg" class="avatar" alt="Ms. Nayana" />
+                    <img src="../../assets/5.png" class="avatar" alt="Ms. Nayana" />
                     <div class="username tm-font">Ms. Nayana</div>
                     <div class="location tm-font">Bengaluru</div>
                 </b-col>
@@ -118,18 +143,28 @@ export default {
   data() {
     return {
       paginationAlign: 'left',
+      paginationSize: 7,
+      paginationPadding: 4,
     };
   },
   mounted() {
     const element = this.$el.querySelector('.VueCarousel-pagination');
     element.setAttribute('style', 'text-align: left !important');
   },
+  methods: {
+    explore() {
+      const rand = Math.floor(Math.random() * Math.floor(2));
+      console.log(rand);
+      if (rand === 0) {
+        this.$router.push('architecture');
+      } else {
+        this.$router.push('interior');
+      }
+    },
+  },
 };
 </script>
 <style lang="scss">
-// .VueCarousel-pagination {
-//     text-align: left !important;
-// }
 .tm-slide-1 {
     text-align: justify;
     font-family: montserrat;
@@ -164,9 +199,4 @@ export default {
 .tm-font {
     font-size: 12px;
 }
-// @media only screen and (max-width: 600px) {
-//     .tm-font {
-//         font-size: 22px;
-//     }
-// }
 </style>

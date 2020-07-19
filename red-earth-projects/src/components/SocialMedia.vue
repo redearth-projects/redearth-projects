@@ -1,40 +1,26 @@
 <template>
-    <div>
+    <div class="soc-mob">
         <div class="social-media">
-            <div>
-                <a href="https://www.facebook.com/redearthprojects/">
-                    <img src="../assets/facebook.png" alt="Facebook" class="facebook" />
-                </a>
-            </div>
-            <div>
-                <a href="#">
-                    <img src="../assets/twitter.png" alt="Twitter" class="twitter" />
-                </a>
-            </div>
-            <div>
-                <a href="https://www.instagram.com/redearthprojects/">
-                    <img src="../assets/instagram.png" alt="Instagram" />
-                </a>
-            </div>
+            <a href="https://www.facebook.com/redearthprojects/" target="blank">
+                <img src="../assets/facebook.png" alt="Facebook" class="facebook" />
+            </a>
+            <a href="https://www.linkedin.com/company/redearthprojects" target="blank">
+                <img src="../assets/in.jpg" alt="LinkedIn" class="twitter" />
+            </a>
+            <a href="https://www.instagram.com/redearthprojects/" target="blank">
+                <img src="../assets/instagram.png" alt="Instagram" />
+            </a>
         </div>
         <div class="mob-social">
-            <b-row>
-                <b-col>
-                    <a href="https://www.facebook.com/redearthprojects/">
-                        <img src="../assets/facebook.png" alt="Facebook" class="facebook" />
-                    </a>
-                </b-col>
-                <b-col>
-                    <a href="#">
-                        <img src="../assets/twitter.png" alt="Twitter" class="twitter" />
-                    </a>
-                </b-col>
-                <b-col>
-                    <a href="https://www.instagram.com/redearthprojects/">
-                        <img src="../assets/instagram.png" alt="Instagram" />
-                    </a>
-                </b-col>
-            </b-row>
+            <a href="https://www.facebook.com/redearthprojects/" target="blank">
+                <img src="../assets/facebook.png" alt="Facebook" />
+            </a>
+            <a href="https://www.linkedin.com/company/redearthprojects" target="blank">
+                <img src="../assets/in.jpg" alt="LinkedIn" />
+            </a>
+            <a href="https://www.instagram.com/redearthprojects/" target="blank">
+                <img src="../assets/instagram.png" alt="Instagram" />
+            </a>
         </div>
     </div>
 </template>
@@ -44,18 +30,21 @@ export default {
 };
 </script>
 <style lang="scss">
-.facebook {
-    margin-bottom: 20px;
-}
-.twitter {
-    margin-bottom: 20px;
-}
-.social-media {
-    margin-left: 20px;
-    margin-top: -8%;
+.social-media > a {
+    padding: 10px;
+    display: block;
 }
 .mob-social {
     display: none;
+}
+.soc-mob {
+    width:75px;
+    position: absolute;
+    top: 50%;
+    margin-top: -50px;
+}
+a > img {
+    height: 20px;
 }
 @media only screen and (max-width: 600px) {
     .social-media {
@@ -67,6 +56,14 @@ export default {
         margin-top: 30px;
         display: inherit;
         text-align: center;
+    }
+    .mob-social > a {
+        padding: 40px;
+    }
+    .soc-mob {
+        margin-top:0;
+        width:100%;
+        position: relative;
     }
 }
 </style>

@@ -29,4 +29,10 @@ export default {
     background-repeat: no-repeat;
   }
 }
+.services-bg {
+    background-image: url('../../assets/services-bg.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-top: -10px;
+}
 </style>

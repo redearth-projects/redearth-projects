@@ -1,7 +1,11 @@
 <template>
     <div>
-        <NavigationBar />
-        <router-view />
+        <div class="re-container">
+          <NavigationBar />
+        </div>
+        <div class="re-container" id="contentContainer">
+          <router-view />
+        </div>
     </div>
 </template>
 <script>

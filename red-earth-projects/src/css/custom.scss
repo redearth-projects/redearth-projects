@@ -1,6 +1,11 @@
 @import 'node_modules/bootstrap/scss/bootstrap';
 @import 'node_modules/bootstrap-vue/src/index.scss';
 
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
 // Breakpoints
 $bp-small: 48em; // 768px
 $bp-medium: 64em; // 1024px
@@ -69,5 +74,89 @@ $header-line-height: 1.25;
 
     @media #{$mq-xlarge} {
         margin: 0 18%;
+    }
+}
+
+// .re-content-container {
+//     margin: 0 4%;
+
+//     @media #{$mq-medium} {
+//         margin: 0 8%;
+//     }
+
+//     @media #{$mq-large} {
+//         margin: 0 12%;
+//     }
+
+//     @media #{$mq-xlarge} {
+//         margin: 0 18%;
+//     }
+// }
+
+.re-arch-container {
+    // margin: 0 4%;
+    margin-left: 4%;
+    margin-right: 4%;
+
+    @media #{$mq-medium} {
+        // margin: 0 8%;
+        margin-right: 0;
+        margin-left: 8%;
+    }
+
+    @media #{$mq-large} {
+        // margin: 0 12%;
+        margin-left: 12%;
+        margin-right: 0;
+    }
+
+    @media #{$mq-xlarge} {
+        margin-left: 18%;
+        margin-right: 0;
+    }
+}
+
+// .modal-header {
+//     border-bottom: none !important;
+// }
+
+// .modal-header .close {
+//     padding: 0;
+//     margin:inherit;
+// }
+
+// .modal-title {
+//     margin: 0 auto;
+// }
+
+// .close:focus {
+//     outline: none;
+// }
+
+@media only screen and (max-width: 600px) {
+    // .modal-open .modal {
+    //     padding: 0px !important;
+    // }
+    .re-social-container {
+        // margin: 0 4%;
+        margin-left: 4%;
+        margin-right: 0;
+    
+        @media #{$mq-medium} {
+            // margin: 0 8%;
+            margin-right: inherit;
+            margin-left: inherit;
+        }
+    
+        @media #{$mq-large} {
+            // margin: 0 12%;
+            margin-left: inherit;
+            margin-right: inherit;
+        }
+    
+        @media #{$mq-xlarge} {
+            margin-left: inherit;
+            margin-right: inherit;
+        }
     }
 }

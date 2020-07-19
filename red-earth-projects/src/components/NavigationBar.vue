@@ -1,108 +1,75 @@
 <template>
     <div>
         <b-navbar toggleable="lg">
-            <!-- <b-navbar-brand href="#">
+            <b-navbar-brand href="#" :class="[currentPage() === '/' ? 'logo-visibility' : '']">
                 <img src="../assets/re-logo-slim.png" class="d-inline-block align-top navbar-logo"
                 alt="Red Earth">
-            </b-navbar-brand> -->
+            </b-navbar-brand>
             <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
             <b-collapse id="nav-collapse" is-nav>
             <b-navbar-nav class="ml-auto">
-                <b-nav-item href="#" @click="activeView('Home')">
+                <b-nav-item href="#">
                     <router-link :to="{name: 'Home'}" exact>
                         HOME
                     </router-link>
-                    <span v-bind:class="{dot: isHome}"></span>
+                    <span :class="[currentPage() === '/' ? 'dot' : '']"></span>
                 </b-nav-item>
-                <b-nav-item href="#" @click="activeView('Architecture')">
+                <b-nav-item href="#">
                     <router-link :to="{name: 'Architecture'}" exact>
                         ARCHITECTURE
                     </router-link>
-                    <span v-bind:class="{dot: isArch}">
-                    </span>
+                    <span :class="[currentPage() === '/architecture' ? 'dot' : '']"></span>
                 </b-nav-item>
-                <b-nav-item href="#" @click="activeView('Interior')">
+                <b-nav-item href="#">
+                  <router-link :to="{name: 'Interior'}" exact>
                     INTERIOR
-                    <span v-bind:class="{dot: isInterior}">
-                    </span>
+                  </router-link>
+                    <span :class="[currentPage() === '/interior' ? 'dot' : '']"></span>
                 </b-nav-item>
-                <b-nav-item href="#" @click="activeView('AboutUs')">
+                <b-nav-item href="#">
                     <router-link :to="{name: 'AboutUs'}" exact>
                       ABOUT US
                     </router-link>
-                    <span v-bind:class="{dot: isAboutUs}">
-                    </span>
+                    <span :class="[currentPage() === '/about-us' ? 'dot' : '']"></span>
                 </b-nav-item>
-                <b-nav-item href="#" @click="activeView('Services')">
+                <b-nav-item href="#">
+                  <router-link :to="{name: 'Services'}" exact>
                     SERVICES
-                    <span v-bind:class="{dot: isServices}">
-                    </span>
+                  </router-link>
+                    <span :class="[currentPage() === '/services' ? 'dot' : '']"></span>
                 </b-nav-item>
-                <b-nav-item href="#" @click="activeView('Contact')">
+                <b-nav-item href="#" @click="showModal">
                     CONTACT
-                    <span v-bind:class="{dot: isContact}">
-                    </span>
                 </b-nav-item>
             </b-navbar-nav>
             </b-collapse>
         </b-navbar>
+        <ContactUs ref="contactUs"/>
     </div>
 </template>
 <script>
+import ContactUs from './ContactUs.vue';
+
 export default {
   name: 'NavigationBar',
-  data() {
-    return {
-      isHome: this.$router.currentRoute.name === 'Home',
-      isArch: this.$router.currentRoute.name === 'Architecture',
-      isInterior: this.$router.currentRoute.name === 'Interior',
-      isAboutUs: this.$router.currentRoute.name === 'AboutUs',
-      isServices: this.$router.currentRoute.name === 'Services',
-      isContact: this.$router.currentRoute.name === 'Contact',
-    };
+  components: {
+    ContactUs,
   },
   methods: {
-    activeView(view) {
-      switch (view) {
-        case 'Home':
-          this.isHome = true;
-          // eslint-disable-next-line no-multi-assign
-          this.isInterior = this.isArch = this.isAboutUs = this.isServices = this.isContact = false;
-          break;
-        case 'Architecture':
-          this.isArch = true;
-          // eslint-disable-next-line no-multi-assign
-          this.isInterior = this.isHome = this.isAboutUs = this.isServices = this.isContact = false;
-          break;
-        case 'Interior':
-          this.isInterior = true;
-          // eslint-disable-next-line no-multi-assign
-          this.isArch = this.isHome = this.isAboutUs = this.isServices = this.isContact = false;
-          break;
-        case 'AboutUs':
-          this.isAboutUs = true;
-          // eslint-disable-next-line no-multi-assign
-          this.isArch = this.isHome = this.isInterior = this.isServices = this.isContact = false;
-          break;
-        case 'Services':
-          this.isServices = true;
-          // eslint-disable-next-line no-multi-assign
-          this.isArch = this.isHome = this.isInterior = this.isAboutUs = this.isContact = false;
-          break;
-        case 'Contact':
-          this.isContact = true;
-          // eslint-disable-next-line no-multi-assign
-          this.isArch = this.isHome = this.isInterior = this.isAboutUs = this.isServices = false;
-          break;
-        default:
-          break;
-      }
+    showModal() {
+      this.$refs.contactUs.showModal();
+    },
+    currentPage() {
+      return this.$route.path;
     },
   },
 };
 </script>
 <style  scoped>
-.navbar-logo { width: 150px;}
+.navbar-logo {
+  height: 35px;
+  margin-left: 55px;
+}
 a {
   font-family: montserrat;
   color: rgba(0, 0, 0, 0.5);
@@ -137,5 +104,12 @@ a:hover {
     margin-top: -15px;
     margin-left: -15px;
   }
+}
+li {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.logo-visibility {
+  display: none;
 }
 </style>
